@@ -18,4 +18,9 @@ final class AdventOfCodeTests: XCTestCase {
         let total = CalibrationSum().getSum(input: input)
         XCTAssertEqual(total, 54390)
     }
+    
+    // started: 1:19pm / completed: 2:58
+    func testCalibrationSumWithNumberWords () throws {
+        
+    }
 }

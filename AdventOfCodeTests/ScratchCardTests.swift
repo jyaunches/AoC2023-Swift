@@ -10,7 +10,6 @@ import XCTest
 
 final class ScratchCardTests: XCTestCase {
     
-    // Part 1: started 2:23 / v1 finished 3:00 / working: 3:07
     // total time: 44 min
     func testDetermineScratchCardPoints() throws {
         let input = InputReader().returnInput("scratch_cards")
@@ -19,5 +18,15 @@ final class ScratchCardTests: XCTestCase {
         let points = game.getPoints(input: input)
         
         XCTAssertEqual(points, 15268)
+    }
+    
+    // total time: 41 min
+    func testCountWinningCardCopies () throws {
+        let input = InputReader().returnInput("scratch_cards")
+        
+        let game = ScratchCards()
+        let cards = game.buildWinningCardCopies(input: input)
+        
+        XCTAssertEqual(cards, 6283755)
     }
 }

@@ -15,10 +15,10 @@
 		270858022C209492002367CB /* AdventOfCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858012C209492002367CB /* AdventOfCodeUITests.swift */; };
 		270858042C209492002367CB /* AdventOfCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858032C209492002367CB /* AdventOfCodeUITestsLaunchTests.swift */; };
 		270858132C20955D002367CB /* input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 270858122C20955D002367CB /* input.txt */; };
-		270858152C2095D7002367CB /* CalibrationSumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858142C2095D7002367CB /* CalibrationSumInput.swift */; };
-		270858172C20A5F8002367CB /* PartOneCalibrationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858162C20A5F8002367CB /* PartOneCalibrationSum.swift */; };
-		2708581F2C211814002367CB /* Part2CubeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708581E2C211814002367CB /* Part2CubeGame.swift */; };
+		270858152C2095D7002367CB /* InputReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858142C2095D7002367CB /* InputReader.swift */; };
 		270858212C211823002367CB /* cube_game_input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 270858202C211823002367CB /* cube_game_input.txt */; };
+		270858232C212241002367CB /* CalibrationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858222C212241002367CB /* CalibrationSum.swift */; };
+		270858252C212273002367CB /* CubeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858242C212272002367CB /* CubeGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +49,11 @@
 		270857FD2C209492002367CB /* AdventOfCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventOfCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		270858012C209492002367CB /* AdventOfCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCodeUITests.swift; sourceTree = "<group>"; };
 		270858032C209492002367CB /* AdventOfCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventOfCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		270858122C20955D002367CB /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input.txt; path = TestInput/input.txt; sourceTree = SOURCE_ROOT; };
-		270858142C2095D7002367CB /* CalibrationSumInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationSumInput.swift; sourceTree = "<group>"; };
-		270858162C20A5F8002367CB /* PartOneCalibrationSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOneCalibrationSum.swift; sourceTree = "<group>"; };
-		2708581E2C211814002367CB /* Part2CubeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Part2CubeGame.swift; sourceTree = "<group>"; };
-		270858202C211823002367CB /* cube_game_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube_game_input.txt; path = TestInput/cube_game_input.txt; sourceTree = SOURCE_ROOT; };
+		270858122C20955D002367CB /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input.txt; path = AdventOfCodeTests/Inputs/input.txt; sourceTree = SOURCE_ROOT; };
+		270858142C2095D7002367CB /* InputReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputReader.swift; sourceTree = "<group>"; };
+		270858202C211823002367CB /* cube_game_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube_game_input.txt; path = AdventOfCodeTests/Inputs/cube_game_input.txt; sourceTree = SOURCE_ROOT; };
+		270858222C212241002367CB /* CalibrationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalibrationSum.swift; sourceTree = "<group>"; };
+		270858242C212272002367CB /* CubeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +104,12 @@
 		270857E52C209490002367CB /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
-				2708581E2C211814002367CB /* Part2CubeGame.swift */,
+				270858242C212272002367CB /* CubeGame.swift */,
+				270858222C212241002367CB /* CalibrationSum.swift */,
 				270857E62C209490002367CB /* AdventOfCodeApp.swift */,
 				270857E82C209490002367CB /* ContentView.swift */,
 				270857EA2C209492002367CB /* Assets.xcassets */,
 				270857EC2C209492002367CB /* Preview Content */,
-				270858162C20A5F8002367CB /* PartOneCalibrationSum.swift */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -125,10 +125,9 @@
 		270857F62C209492002367CB /* AdventOfCodeTests */ = {
 			isa = PBXGroup;
 			children = (
-				270858202C211823002367CB /* cube_game_input.txt */,
-				270858122C20955D002367CB /* input.txt */,
+				270858262C212290002367CB /* Inputs */,
 				270857F72C209492002367CB /* AdventOfCodeTests.swift */,
-				270858142C2095D7002367CB /* CalibrationSumInput.swift */,
+				270858142C2095D7002367CB /* InputReader.swift */,
 			);
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
@@ -140,6 +139,15 @@
 				270858032C209492002367CB /* AdventOfCodeUITestsLaunchTests.swift */,
 			);
 			path = AdventOfCodeUITests;
+			sourceTree = "<group>";
+		};
+		270858262C212290002367CB /* Inputs */ = {
+			isa = PBXGroup;
+			children = (
+				270858122C20955D002367CB /* input.txt */,
+				270858202C211823002367CB /* cube_game_input.txt */,
+			);
+			path = Inputs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2708581F2C211814002367CB /* Part2CubeGame.swift in Sources */,
+				270858232C212241002367CB /* CalibrationSum.swift in Sources */,
 				270857E92C209490002367CB /* ContentView.swift in Sources */,
+				270858252C212273002367CB /* CubeGame.swift in Sources */,
 				270857E72C209490002367CB /* AdventOfCodeApp.swift in Sources */,
-				270858172C20A5F8002367CB /* PartOneCalibrationSum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270857F82C209492002367CB /* AdventOfCodeTests.swift in Sources */,
-				270858152C2095D7002367CB /* CalibrationSumInput.swift in Sources */,
+				270858152C2095D7002367CB /* InputReader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CalibrationSumInput {
+class InputReader {
     
     func returnInput(_ filename: String) -> [String] {
         if let filePath = Bundle(for: AdventOfCodeTests.self).path(forResource: filename, ofType: "txt") {

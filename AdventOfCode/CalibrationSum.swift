@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+ 
 class LineValues {
     var firstChar: String? = nil
     var lastChar: String? = nil

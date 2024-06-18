@@ -7,6 +7,16 @@
 
 import Foundation
 
+extension String {
+    func allInts() -> [Int] {
+        self.split(separator: " ").compactMap( { Int($0) } )
+    }
+    
+    var isEmpty: Bool {
+        return self == ""
+    }
+}
+
 class Score {
     var total = 0
     
@@ -19,89 +29,31 @@ class Score {
     }
 }
 
+struct Card {
+    
+    var score = Score()
+    
+    init(line: String) {
+        if !line.isEmpty {
+            let lineParts = line.components(separatedBy: ":")
+            let nums = lineParts[1].components(separatedBy: "|")
+            let winners = Set(nums[0].allInts())
+            let card = Set(nums[1].allInts())
+            
+            let matches = winners.intersection(card)
+            
+            for _ in 0..<matches.count {
+                score.increment()
+            }
+        }        
+    }
+}
+
 class ScratchCards {
     
-    // Questions: are there duplicates in either side? -> Assume possible. If not, we could potentially sort both lists together.
+    // Questions: are there duplicates in either side? -> Assume possible.
     
-    func getPoints(input: [String]) -> Int {
-        
-        var totalScore = 0
-        for (index, line) in input.enumerated() {
-            
-            let gameInput = line.split(whereSeparator: { $0 == ":"} )
-            
-            if gameInput.count < 2 { break }
-            
-            let inputArrays = gameInput[1].split(whereSeparator: { $0 == "|" })
-            
-            let cardNumbersString = inputArrays[1].trimmingCharacters(in: .whitespacesAndNewlines)
-            let winningNumbersString = inputArrays[0].trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            var cardNumbers = cardNumbersString.split(whereSeparator: { $0 == " " }).map( { Int($0) ?? 0 })
-            cardNumbers.sort()
-            
-            var winningNumbers = winningNumbersString.split(whereSeparator: { $0 == " " }).map( { Int($0) ?? 0 })
-            winningNumbers.sort()
-            
-            var cardPointer = 0
-            var winningPointer = 0
-            
-            let score = Score()
-            
-            while cardPointer < cardNumbers.count && winningPointer < winningNumbers.count {
-                let cardVal = cardNumbers[cardPointer]
-                let winVal = winningNumbers[winningPointer]
-                
-                if cardVal == winVal {
-                    score.increment()
-                    cardPointer += 1
-                } else if cardVal < winVal {
-                    cardPointer += 1
-                } else {
-                    winningPointer += 1
-                }
-            }
-            totalScore += score.total
-        }
-        return totalScore
+    func getPoints(input: [String]) -> Int {        
+        return input.map { Card(line: $0) }.reduce(0, { $0 + $1.score.total })
     }
-        
-        func mergeSort(_ array: [Int]) -> [Int] {
-            guard array.count > 1 else { return array }
-            
-            let midIndex = array.count / 2
-            
-            let lowerHalf = mergeSort(Array(array[0..<midIndex]))
-            let topHalf = mergeSort(Array(array[midIndex..<array.count]))
-            
-            return merge(lowerHalf, topHalf)
-        }
-        
-        func merge(_ left: [Int], _ right: [Int]) -> [Int] {
-            var leftIndex = 0
-            var rightIndex = 0
-            var orderedArray = [Int]()
-                        
-            while leftIndex < left.count && rightIndex < right.count {
-                    if left[leftIndex] < right[rightIndex] {
-                        orderedArray.append(left[leftIndex])
-                        leftIndex += 1
-                    } else {
-                        orderedArray.append(right[rightIndex])
-                        rightIndex += 1
-                    }
-                }
-
-                while leftIndex < left.count {
-                    orderedArray.append(left[leftIndex])
-                    leftIndex += 1
-                }
-
-                while rightIndex < right.count {
-                    orderedArray.append(right[rightIndex])
-                    rightIndex += 1
-                }
-
-                return orderedArray
-        }
 }

@@ -11,7 +11,11 @@ struct GameConfiguration {
     var red: Int = 0
     var blue: Int = 0
     var green: Int = 0	
-} 
+    
+    func powerTheColors() -> Int {
+        return red * blue * green
+    }
+}
 
 struct GameResults {
     var id: Int
@@ -26,8 +30,43 @@ class CubeGame {
         self.config = config
     }
     
-    func parseInput(input: [String]) -> Int {
+    func findTheScore(input: [String]) -> Int {
         var totalScore = 0
+        parseGameLine(input: input).forEach( { totalScore += findLineScore(game: $0)})
+        
+        return totalScore
+    }
+    
+    func powerTheMins(input: [String]) -> Int {
+        var totalScore = 0
+        parseGameLine(input: input).forEach( { totalScore += findLinePower(game: $0)})
+        return totalScore
+    }
+    
+    func findLinePower(game: GameResults) -> Int {
+        var lineGameConfig = GameConfiguration()
+        for play in game.plays {
+            if play.blue > lineGameConfig.blue { lineGameConfig.blue = play.blue }
+            if play.red > lineGameConfig.red { lineGameConfig.red = play.red }
+            if play.green > lineGameConfig.green { lineGameConfig.green = play.green }
+        }
+        
+        return lineGameConfig.powerTheColors()
+    }
+    
+    func findLineScore(game: GameResults) -> Int {
+        var impossiblePlay = false
+        for play in game.plays {
+            if play.blue > config.blue || play.red > config.red || play.green > config.green {
+                impossiblePlay = true
+            }
+        }
+        
+        return impossiblePlay ? 0 : game.id
+    }
+    
+    private func parseGameLine(input: [String]) -> [GameResults] {
+        var results: [GameResults] = []
         
         for (index, line) in input.enumerated() {
             
@@ -71,20 +110,8 @@ class CubeGame {
                 gamePlays.append(gameReveal)
             }
             
-            totalScore += findLineScore(game: GameResults(id: gameId, plays: gamePlays))
+            results.append(GameResults(id: gameId, plays: gamePlays))
         }
-        
-        return totalScore
-    }
-    
-    func findLineScore(game: GameResults) -> Int {
-        var impossiblePlay = false
-        for play in game.plays {
-            if play.blue > config.blue || play.red > config.red || play.green > config.green {
-                impossiblePlay = true
-            }
-        }
-        
-        return impossiblePlay ? 0 : game.id
+        return results
     }
 }

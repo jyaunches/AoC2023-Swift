@@ -10,8 +10,8 @@ import XCTest
 
 final class AdventOfCodeTests: XCTestCase {
 
-    
-    
+    // Part 1 - 34 minutes
+    // Part 2 - 99 minutes
     func testCalibrationSum() throws {
         let input = InputReader().returnInput("input")
         
@@ -19,25 +19,24 @@ final class AdventOfCodeTests: XCTestCase {
         XCTAssertEqual(total, 54277)
     }
     
-    // started: 3:50pm
-    // finished v1 of code: 4:38
-    func testCubeGame() throws {
-        let gameConfig = GameConfiguration(red: 12, blue: 14, green: 13)
-        let cubeGame = CubeGame(config: gameConfig)
+    // Part 1 - 48 minutes
+    func testCubeGamePart1() throws {
+        let cubeGame = CubeGame(config: GameConfiguration(red: 12, blue: 14, green: 13))
         
         let input = InputReader().returnInput("cube_game_input")
-        let totalScore = cubeGame.parseInput(input: input)
+        let totalScore = cubeGame.findTheScore(input: input)
         
         XCTAssertEqual(totalScore, 3035)
     }
     
-    func splitStringAndGetFirstElement(_ input: String, separator: Character) -> String? {
-        let components = input.split(separator: separator)
-        return components.first.map { String($0) }
+    // Part 2 - 16 minutes
+    func testCubeGamePartTwo() throws {
+        let cubeGame = CubeGame(config: GameConfiguration())
+        
+        let input = InputReader().returnInput("cube_game_input")
+        let totalScore = cubeGame.powerTheMins(input: input)
+        
+        XCTAssertEqual(totalScore, 66027)
     }
     
-    // started: 1:19pm / completed: 2:58
-    func testCalibrationSumWithNumberWords () throws {
-        
-    }
 }

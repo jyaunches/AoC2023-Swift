@@ -21,6 +21,9 @@
 		270858252C212273002367CB /* CubeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858242C212272002367CB /* CubeGame.swift */; };
 		270858282C2129AD002367CB /* EngineSchematic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858272C2129AD002367CB /* EngineSchematic.swift */; };
 		2708582A2C212D00002367CB /* engine_schematic.txt in Resources */ = {isa = PBXBuildFile; fileRef = 270858292C212D00002367CB /* engine_schematic.txt */; };
+		2708582C2C2207DE002367CB /* ScratchCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708582B2C2207DE002367CB /* ScratchCards.swift */; };
+		2708582E2C2207FB002367CB /* ScratchCardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708582D2C2207FB002367CB /* ScratchCardTests.swift */; };
+		270858302C220853002367CB /* scratch_cards.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2708582F2C220853002367CB /* scratch_cards.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		270858242C212272002367CB /* CubeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeGame.swift; sourceTree = "<group>"; };
 		270858272C2129AD002367CB /* EngineSchematic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSchematic.swift; sourceTree = "<group>"; };
 		270858292C212D00002367CB /* engine_schematic.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = engine_schematic.txt; path = TestInput/engine_schematic.txt; sourceTree = SOURCE_ROOT; };
+		2708582B2C2207DE002367CB /* ScratchCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCards.swift; sourceTree = "<group>"; };
+		2708582D2C2207FB002367CB /* ScratchCardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardTests.swift; sourceTree = "<group>"; };
+		2708582F2C220853002367CB /* scratch_cards.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = scratch_cards.txt; path = TestInput/scratch_cards.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,7 @@
 				270857EA2C209492002367CB /* Assets.xcassets */,
 				270857EC2C209492002367CB /* Preview Content */,
 				270858272C2129AD002367CB /* EngineSchematic.swift */,
+				2708582B2C2207DE002367CB /* ScratchCards.swift */,
 			);
 			path = AdventOfCode;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 				270858262C212290002367CB /* Inputs */,
 				270857F72C209492002367CB /* AdventOfCodeTests.swift */,
 				270858142C2095D7002367CB /* InputReader.swift */,
+				2708582D2C2207FB002367CB /* ScratchCardTests.swift */,
 			);
 			path = AdventOfCodeTests;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 		270858262C212290002367CB /* Inputs */ = {
 			isa = PBXGroup;
 			children = (
+				2708582F2C220853002367CB /* scratch_cards.txt */,
 				270858292C212D00002367CB /* engine_schematic.txt */,
 				270858122C20955D002367CB /* input.txt */,
 				270858202C211823002367CB /* cube_game_input.txt */,
@@ -272,6 +281,7 @@
 				270858212C211823002367CB /* cube_game_input.txt in Resources */,
 				270858132C20955D002367CB /* input.txt in Resources */,
 				2708582A2C212D00002367CB /* engine_schematic.txt in Resources */,
+				270858302C220853002367CB /* scratch_cards.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +301,7 @@
 			files = (
 				270858232C212241002367CB /* CalibrationSum.swift in Sources */,
 				270858282C2129AD002367CB /* EngineSchematic.swift in Sources */,
+				2708582C2C2207DE002367CB /* ScratchCards.swift in Sources */,
 				270857E92C209490002367CB /* ContentView.swift in Sources */,
 				270858252C212273002367CB /* CubeGame.swift in Sources */,
 				270857E72C209490002367CB /* AdventOfCodeApp.swift in Sources */,
@@ -303,6 +314,7 @@
 			files = (
 				270857F82C209492002367CB /* AdventOfCodeTests.swift in Sources */,
 				270858152C2095D7002367CB /* InputReader.swift in Sources */,
+				2708582E2C2207FB002367CB /* ScratchCardTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,8 @@
 		270858132C20955D002367CB /* input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 270858122C20955D002367CB /* input.txt */; };
 		270858152C2095D7002367CB /* CalibrationSumInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858142C2095D7002367CB /* CalibrationSumInput.swift */; };
 		270858172C20A5F8002367CB /* PartOneCalibrationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270858162C20A5F8002367CB /* PartOneCalibrationSum.swift */; };
+		2708581F2C211814002367CB /* Part2CubeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2708581E2C211814002367CB /* Part2CubeGame.swift */; };
+		270858212C211823002367CB /* cube_game_input.txt in Resources */ = {isa = PBXBuildFile; fileRef = 270858202C211823002367CB /* cube_game_input.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		270858122C20955D002367CB /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = input.txt; path = TestInput/input.txt; sourceTree = SOURCE_ROOT; };
 		270858142C2095D7002367CB /* CalibrationSumInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationSumInput.swift; sourceTree = "<group>"; };
 		270858162C20A5F8002367CB /* PartOneCalibrationSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartOneCalibrationSum.swift; sourceTree = "<group>"; };
+		2708581E2C211814002367CB /* Part2CubeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Part2CubeGame.swift; sourceTree = "<group>"; };
+		270858202C211823002367CB /* cube_game_input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = cube_game_input.txt; path = TestInput/cube_game_input.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		270857E52C209490002367CB /* AdventOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				2708581E2C211814002367CB /* Part2CubeGame.swift */,
 				270857E62C209490002367CB /* AdventOfCodeApp.swift */,
 				270857E82C209490002367CB /* ContentView.swift */,
 				270857EA2C209492002367CB /* Assets.xcassets */,
@@ -120,6 +125,7 @@
 		270857F62C209492002367CB /* AdventOfCodeTests */ = {
 			isa = PBXGroup;
 			children = (
+				270858202C211823002367CB /* cube_game_input.txt */,
 				270858122C20955D002367CB /* input.txt */,
 				270857F72C209492002367CB /* AdventOfCodeTests.swift */,
 				270858142C2095D7002367CB /* CalibrationSumInput.swift */,
@@ -249,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270858212C211823002367CB /* cube_game_input.txt in Resources */,
 				270858132C20955D002367CB /* input.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2708581F2C211814002367CB /* Part2CubeGame.swift in Sources */,
 				270857E92C209490002367CB /* ContentView.swift in Sources */,
 				270857E72C209490002367CB /* AdventOfCodeApp.swift in Sources */,
 				270858172C20A5F8002367CB /* PartOneCalibrationSum.swift in Sources */,

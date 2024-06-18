@@ -1,0 +1,27 @@
+# User-specific files
+*.swp
+*.swo
+*.tmp
+*.DS_Store
+
+# Xcode
+DerivedData/
+.idea/
+xcuserdata/
+*.xcuserstate
+*.moved-aside
+*.xcworkspace
+
+# Xcode iOS DeviceSupport
+!*/DeviceSupport/
+!*/DeviceSupport/*
+
+# Xcode MacOS DeviceSupport
+!*/DeviceSupport/MacOS/*
+
+# Xcode Scheme
+*.xcscheme
+*.xcscmblueprint
+
+# Xcode Archives
+*.xcarchive

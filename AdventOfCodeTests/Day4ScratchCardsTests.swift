@@ -8,7 +8,7 @@
 import XCTest
 @testable import AdventOfCode
 
-final class ScratchCardTests: XCTestCase {
+final class Day4ScratchCardsTests: XCTestCase {
     
     // total time: 44 min
     func testDetermineScratchCardPoints() throws {

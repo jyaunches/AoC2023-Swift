@@ -7,19 +7,32 @@
 
 import Foundation
  
-let digits: [String: Int] = Dictionary(uniqueKeysWithValues: (0..<10).map { (String($0), $0) })
-let extendedDigits = digits.merging([
-    "one": 1,
-    "two": 2,
-    "three": 3,
-    "four": 4,
-    "five": 5,
-    "six": 6,
-    "seven": 7,
-    "eight": 8,
-    "nine": 9
-], uniquingKeysWith: { (_, new) in new })
-
+class LineValues {
+    var firstChar: String? = nil
+    var lastChar: String? = nil
+    
+    func assignFirstAndLast(value: Int) {
+        if firstChar == nil {
+            firstChar = "\(value)"
+        }
+        lastChar = "\(value)"
+    }
+    
+    func assignFrom(_ other: LineValues) {
+        if firstChar == nil {
+            firstChar = other.firstChar
+        }
+        lastChar = other.lastChar
+    }
+    
+    var calibrationValue: Int? {
+        if let firstChar = firstChar,
+           let lastChar = lastChar {
+           return Int("\(firstChar)\(lastChar)")
+        }
+        return nil
+    }
+}
 
 class TrebuchetDayOne {
     
@@ -31,27 +44,49 @@ class TrebuchetDayOne {
     // * if you only have 1 number on a line, it is used for the first and last chars
     // time to completion: 34 minutes
     func getSum(input: [String]) -> Int {
-        var total = 0
-
-            for line in input {
-                let subset = extendedDigits.filter { line.contains($0.key) }
-                
-                print("Line: \(line) - Subset: \(subset)")
-                if subset.isEmpty {
-                    continue
-                }
-
-                // Find the first occurrence position for min
-                let x = subset.min { line.range(of: $0.key)!.lowerBound < line.range(of: $1.key)!.lowerBound }!.value
-
-                // Find the last occurrence position for max
-                let y = subset.max { line.range(of: $0.key, options: .backwards)!.lowerBound < line.range(of: $1.key, options: .backwards)!.lowerBound }!.value
-
-                print("Adding: \(x)\(y)")
-                total += Int("\(x)\(y)")!
+        var total: Int = 0
+        
+        for line in input {
+            var lineValues = LineValues()
+            parseLine(line: line, lineValues: lineValues)
+            
+            if let calibrationValue = lineValues.calibrationValue {
+                total += calibrationValue
             }
-
-            return total
+        }
+        return total
+    }
+    
+    func parseLine(line: String, lineValues: LineValues) {
+        var evalString = ""
+        
+        for (index, char) in line.enumerated() {
+            evalString.append(char)
+            
+            if let actualValue = library[evalString] {
+                lineValues.assignFirstAndLast(value: actualValue)
+            } else if let charAsInt = char.wholeNumberValue {
+                lineValues.assignFirstAndLast(value: charAsInt)
+            } else if evalString.count >= 3,
+                let foundValue = examineWindow(evalString){
+                lineValues.assignFrom(foundValue)
+            }
+        }
+    }
+    
+    func examineWindow(_ eval: String) -> LineValues? {
+        
+        var lv: LineValues? = nil
+        for index in 0...(eval.count-3) {
+            let startIndex = eval.index(eval.startIndex, offsetBy: index)
+            let substring = eval.substring(from: startIndex)
+            
+            if let foundValue = library[substring] {
+                lv = LineValues()
+                lv?.assignFirstAndLast(value: foundValue)
+            }
+        }
+        return lv
     }
 
 }

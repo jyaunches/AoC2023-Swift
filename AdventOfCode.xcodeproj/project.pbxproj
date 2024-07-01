@@ -27,6 +27,7 @@
 		27AE9DF52C32244600E0F1EA /* Day1TrebuchetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9DF42C32244600E0F1EA /* Day1TrebuchetTests.swift */; };
 		27AE9DF72C32247B00E0F1EA /* Day2CubeGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9DF62C32247B00E0F1EA /* Day2CubeGameTests.swift */; };
 		27AE9DF92C3224CE00E0F1EA /* Day3EngineSchematicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9DF82C3224CE00E0F1EA /* Day3EngineSchematicTests.swift */; };
+		27AE9DFE2C322A1E00E0F1EA /* TrebuchetOptimizedDayOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27AE9DFD2C322A1E00E0F1EA /* TrebuchetOptimizedDayOne.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		27AE9DF42C32244600E0F1EA /* Day1TrebuchetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1TrebuchetTests.swift; sourceTree = "<group>"; };
 		27AE9DF62C32247B00E0F1EA /* Day2CubeGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2CubeGameTests.swift; sourceTree = "<group>"; };
 		27AE9DF82C3224CE00E0F1EA /* Day3EngineSchematicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day3EngineSchematicTests.swift; sourceTree = "<group>"; };
+		27AE9DFD2C322A1E00E0F1EA /* TrebuchetOptimizedDayOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrebuchetOptimizedDayOne.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				270858222C212241002367CB /* TrebuchetDayOne.swift */,
+				27AE9DFD2C322A1E00E0F1EA /* TrebuchetOptimizedDayOne.swift */,
 				270858242C212272002367CB /* CubeGame.swift */,
 				270858272C2129AD002367CB /* EngineSchematic.swift */,
 				2708582B2C2207DE002367CB /* ScratchCards.swift */,
@@ -267,6 +270,7 @@
 				270858282C2129AD002367CB /* EngineSchematic.swift in Sources */,
 				270858322C222BD8002367CB /* Almanac.swift in Sources */,
 				2708582C2C2207DE002367CB /* ScratchCards.swift in Sources */,
+				27AE9DFE2C322A1E00E0F1EA /* TrebuchetOptimizedDayOne.swift in Sources */,
 				270857E92C209490002367CB /* ContentView.swift in Sources */,
 				270858252C212273002367CB /* CubeGame.swift in Sources */,
 				270857E72C209490002367CB /* AdventOfCodeApp.swift in Sources */,

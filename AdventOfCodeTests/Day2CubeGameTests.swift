@@ -14,7 +14,7 @@ final class Day2CubeGameTests: XCTestCase {
     func testCubeGamePart1() throws {
         let cubeGame = CubeGame(config: GameConfiguration(red: 12, blue: 14, green: 13))
         
-        let input = InputReader().returnInput("cube_game_input")
+        let input = InputReader().returnInput("cube_game")
         let totalScore = cubeGame.findTheScore(input: input)
         
         XCTAssertEqual(totalScore, 3035)
@@ -24,7 +24,7 @@ final class Day2CubeGameTests: XCTestCase {
     func testCubeGamePartTwo() throws {
         let cubeGame = CubeGame(config: GameConfiguration())
         
-        let input = InputReader().returnInput("cube_game_input")
+        let input = InputReader().returnInput("cube_game")
         let totalScore = cubeGame.powerTheMins(input: input)
         
         XCTAssertEqual(totalScore, 66027)

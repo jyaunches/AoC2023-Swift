@@ -18,4 +18,11 @@ final class Day1TrebuchetTests: XCTestCase {
         let total = TrebuchetDayOne().getSum(input: input)
         XCTAssertEqual(total, 54277)
     }
+    
+    func testCalibrationSumOptimizedCode() throws {
+        let input = InputReader().returnInput("trebuchet")
+        
+        let total = TrebuchetOptimizedDayOne().getSum(input: input)
+        XCTAssertEqual(total, 54277)
+    }
 }
